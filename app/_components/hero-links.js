@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const emailAddress = "arkha.the.coder@gmail.com";
+const iconLinkClass = "grid h-9 w-[26px] shrink-0 place-items-center border-0 bg-transparent p-0 text-[#a4a5ab] transition-[color,transform] duration-200 hover:-translate-y-px hover:text-[#f5f5f3] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#88a6ff] max-[500px]:w-[22px]";
 
 function DownloadIcon() {
   return (
@@ -74,26 +75,26 @@ export default function HeroLinks() {
 
   return (
     <>
-      <div id="links" className="hero-actions" role="group" aria-label="Resume and profile links">
-        <a className="resume-button" href="/Arkhaprava_Mishra_Resume.pdf" download="Arkhaprava_Mishra_Resume.pdf">
+      <div id="links" className="mt-7 flex flex-wrap items-center gap-[18px] max-[500px]:mt-[22px] max-[500px]:flex-nowrap max-[500px]:justify-center max-[500px]:gap-[10px]" role="group" aria-label="Resume and profile links">
+        <a className="inline-flex min-h-12 items-center gap-[18px] rounded-[7px] border border-[#383a42] px-[17px] text-[15px] font-semibold text-[#f2f2f0] transition-[border-color,background-color] duration-200 hover:border-[#747783] hover:bg-[#0d0e11] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#88a6ff] max-[500px]:min-h-10 max-[500px]:gap-[10px] max-[500px]:px-[10px] max-[500px]:text-[13px]" href="/Arkhaprava_Mishra_Resume.pdf" download="Arkhaprava_Mishra_Resume.pdf">
           <span>Resume</span>
           <DownloadIcon />
         </a>
 
-        <a className="hero-icon-link" href="https://www.linkedin.com/in/arkhaprava-mishra-1183a1321/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
+        <a className={iconLinkClass} href="https://www.linkedin.com/in/arkhaprava-mishra-1183a1321/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
           <LinkedInIcon />
         </a>
 
-        <a className="hero-icon-link" href="https://github.com/arkha2004" target="_blank" rel="noreferrer" aria-label="GitHub profile">
+        <a className={iconLinkClass} href="https://github.com/arkha2004" target="_blank" rel="noreferrer" aria-label="GitHub profile">
           <GitHubIcon />
         </a>
 
-        <button className="hero-icon-link" type="button" onClick={copyEmail} aria-label={`Copy ${emailAddress}`} title="Copy email address">
+        <button className={`${iconLinkClass} cursor-pointer`} type="button" onClick={copyEmail} aria-label={`Copy ${emailAddress}`} title="Copy email address">
           <EmailIcon />
         </button>
       </div>
 
-      {toastMessage && <div className="email-toast" role="status" aria-live="polite">{toastMessage}</div>}
+      {toastMessage && <div className="fixed bottom-[26px] left-1/2 z-50 max-w-[calc(100vw-32px)] -translate-x-1/2 whitespace-nowrap rounded-full border border-[#d7d8dc] bg-[#f5f5f3] px-[18px] py-3 text-[13px] font-semibold text-[#141519] shadow-[0_12px_35px_rgb(0_0_0_/_32%)]" role="status" aria-live="polite">{toastMessage}</div>}
     </>
   );
 }

@@ -22,5 +22,10 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 
 ## Project structure
 
-- `app/` — page, layout, styles, and hero link interactions
+- `app/page.js` — composes the single-page portfolio
+- `app/layout.js` — document shell and metadata
+- `app/_components/site-nav.js` and `site-footer.js` — shared page chrome
+- `app/_components/sections/` — Home, Projects, and Contact sections
+- `app/_components/hero-links.js` — resume, profile, and email-copy interactions
+- `app/globals.css` — global styles, design tokens, and the availability animation
 - `public/` — resume and image assets served by the site
