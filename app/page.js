@@ -15,13 +15,14 @@ export default function Home() {
     <main id="home" className="min-h-svh px-5 pb-7 pt-5 sm:px-8 sm:pt-7 lg:px-12">
       <div className="mx-auto flex min-h-[calc(100svh-3rem)] w-full max-w-6xl flex-col">
         <header className="site-header grid h-[58px] shrink-0 grid-cols-[1fr_auto_1fr] items-center border-b pb-4">
-          <a href="#home" className="brand-mark" aria-label="Arkhaprava Mishra, home">
+          <a href="#home" className="brand-mark w-fit justify-self-start rounded-lg px-2.5 py-1" aria-label="Arkhaprava Mishra, home">
             a<span>.</span>
           </a>
 
-          <nav aria-label="Page navigation" className="nav-capsule">
-            <a className="nav-item nav-item-active" href="#home">Home</a>
-            <a className="nav-item" href="#links">Links</a>
+          <nav aria-label="Page navigation" className="fixed left-1/2 top-6 z-50 flex -translate-x-1/2 items-center gap-1.5 rounded-2xl border border-white/10 bg-[#252528] p-1.5 shadow-lg max-[500px]:top-[15px]">
+            <a className="flex min-h-10 items-center justify-center rounded-xl bg-[#3c3c42] px-[18px] text-[15px] text-white transition-colors hover:bg-[#3c3c42] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#88a6ff] max-[500px]:min-h-[35px] max-[500px]:px-[14px] max-[500px]:text-xs" href="#home" aria-current="page">Home</a>
+            <a className="flex min-h-10 items-center justify-center rounded-xl px-[18px] text-[15px] text-[#b6b6bd] transition-colors hover:bg-[#3c3c42] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#88a6ff] max-[500px]:min-h-[35px] max-[500px]:px-[14px] max-[500px]:text-xs" href="https://github.com/arkha2004" target="_blank" rel="noreferrer">Projects</a>
+            <a className="flex min-h-10 items-center justify-center rounded-xl px-[18px] text-[15px] text-[#b6b6bd] transition-colors hover:bg-[#3c3c42] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#88a6ff] max-[500px]:min-h-[35px] max-[500px]:px-[14px] max-[500px]:text-xs" href="#links">Contact</a>
           </nav>
 
           <span className="header-note">PORTFOLIO <span className="text-blue">/</span> 2026</span>
