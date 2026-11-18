@@ -6,16 +6,20 @@ import ContactSection from "./_components/sections/contact-section";
 
 export default function Page() {
   return (
-    <div className="min-h-svh px-5 pb-7 pt-5 sm:px-8 sm:pt-7 lg:px-12">
+    <div className="min-h-svh pb-7 pt-5">
       <SiteNav />
 
-      <main className="mx-auto w-full max-w-6xl">
-        <HomeSection />
+      <main>
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-12">
+          <HomeSection />
+        </div>
         <ProjectsSection />
-        <ContactSection />
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-12">
+          <ContactSection />
+        </div>
       </main>
 
-      <div className="mx-auto w-full max-w-6xl">
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-12">
         <SiteFooter />
       </div>
     </div>

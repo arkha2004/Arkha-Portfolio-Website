@@ -1,10 +1,22 @@
+import ProjectCard from "../project-card";
+import { projects } from "../../data/projects";
+
 export default function ProjectsSection() {
   return (
-    <section id="projects" aria-labelledby="projects-title" className="mx-auto flex min-h-[70svh] w-full max-w-6xl scroll-mt-24 items-center py-24">
-      <div className="w-full text-center sm:text-left">
-        <p className="font-mono text-[10px] tracking-[0.18em] text-[#88a6ff]">02 / SELECTED WORK</p>
-        <h2 id="projects-title" className="mt-4 font-[var(--font-display)] text-4xl font-bold tracking-[-0.055em] text-[#f5f5f3] sm:text-5xl">Projects</h2>
-        <p className="mt-4 max-w-xl text-sm leading-7 text-[#85868a]">The project showcase will be built here next.</p>
+    <section id="projects" aria-labelledby="projects-title" className="w-full scroll-mt-24 bg-[var(--light-paper)] py-16 text-[var(--light-ink)] sm:py-20">
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-12">
+        <div className="flex flex-wrap items-end justify-between gap-5">
+          <div className="w-full text-center sm:w-auto sm:text-left">
+            <h2 id="projects-title" className="font-[var(--font-display)] text-4xl font-bold tracking-[-0.06em] text-[var(--light-ink)] sm:text-5xl">Projects</h2>
+          </div>
+          <p className="mx-auto w-full max-w-sm text-center text-sm leading-6 text-[var(--light-muted)] sm:mx-0 sm:w-auto sm:text-left">A couple of projects shaped by useful ideas, careful interfaces, and full-stack problem solving.</p>
+        </div>
+
+        <div className="project-showcase-grid mx-auto mt-8 w-full max-w-3xl p-3 sm:p-4">
+          <div className="grid gap-5 lg:grid-cols-2 lg:gap-6">
+            {projects.map((project) => <ProjectCard key={project.number} project={project} />)}
+          </div>
+        </div>
       </div>
     </section>
   );

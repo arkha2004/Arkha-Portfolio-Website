@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const emailAddress = "arkha.the.coder@gmail.com";
-const iconLinkClass = "grid h-9 w-[26px] shrink-0 place-items-center border-0 bg-transparent p-0 text-[#a4a5ab] transition-[color,transform] duration-200 hover:-translate-y-px hover:text-[#f5f5f3] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#88a6ff] max-[500px]:w-[22px]";
+const iconLinkClass = "grid h-9 w-[26px] shrink-0 place-items-center border-0 bg-transparent p-0 text-[#a4a5ab] transition-[color,transform] duration-200 hover:-translate-y-px hover:text-[var(--blue)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--blue)] max-[500px]:w-[22px]";
 
 function DownloadIcon() {
   return (
@@ -76,7 +76,7 @@ export default function HeroLinks() {
   return (
     <>
       <div id="links" className="mt-7 flex flex-wrap items-center gap-[18px] max-[500px]:mt-[22px] max-[500px]:flex-nowrap max-[500px]:justify-center max-[500px]:gap-[10px]" role="group" aria-label="Resume and profile links">
-        <a className="inline-flex min-h-12 items-center gap-[18px] rounded-[7px] border border-[#383a42] px-[17px] text-[15px] font-semibold text-[#f2f2f0] transition-[border-color,background-color] duration-200 hover:border-[#747783] hover:bg-[#0d0e11] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#88a6ff] max-[500px]:min-h-10 max-[500px]:gap-[10px] max-[500px]:px-[10px] max-[500px]:text-[13px]" href="/Arkhaprava_Mishra_Resume.pdf" download="Arkhaprava_Mishra_Resume.pdf">
+        <a className="inline-flex min-h-12 items-center gap-[18px] rounded-[7px] border border-[var(--blue)] bg-[var(--blue)] px-[17px] text-[15px] font-semibold text-[#07111a] transition-colors hover:bg-[var(--blue-hover)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--blue)] max-[500px]:min-h-10 max-[500px]:gap-[10px] max-[500px]:px-[10px] max-[500px]:text-[13px]" href="/Arkhaprava_Mishra_Resume.pdf" download="Arkhaprava_Mishra_Resume.pdf">
           <span>Resume</span>
           <DownloadIcon />
         </a>

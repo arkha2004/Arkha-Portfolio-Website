@@ -5,7 +5,12 @@
   --paper: #050506;
   --ink: #f5f5f3;
   --muted: #85868a;
-  --blue: #88a6ff;
+  --blue: #008cff;
+  --blue-hover: #1996ff;
+  --light-paper: #f0f1f2;
+  --light-ink: #171717;
+  --light-muted: #66686d;
+  --light-line: #d9dadd;
   --line: #292a2e;
   --font-display: "Trebuchet MS", "Segoe UI Variable", "Segoe UI", sans-serif;
   --font-body: "Segoe UI Variable", "Segoe UI", Arial, sans-serif;
@@ -23,7 +28,26 @@ html { scroll-behavior: smooth; }
 body { margin: 0; min-height: 100vh; background: var(--paper); color: var(--ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
 a { color: inherit; text-decoration: none; }
 
-.availability-pill::after { position: absolute; z-index: 1; inset: 0; padding: 1.5px; border-radius: inherit; background: conic-gradient(from var(--availability-angle), transparent 0deg 300deg, rgb(136 166 255 / 20%) 319deg, rgb(224 232 255 / 98%) 340deg, rgb(136 166 255 / 35%) 352deg, transparent 360deg); content: ""; pointer-events: none; filter: drop-shadow(0 0 3px rgb(136 166 255 / 45%)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: exclude; animation: availability-edge-sweep 6s linear infinite; }
+.project-showcase-grid {
+  background-color: var(--light-paper);
+  background-image:
+    linear-gradient(rgb(23 23 23 / 8%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(23 23 23 / 8%) 1px, transparent 1px);
+  background-position: center;
+  background-size: 28px 28px;
+}
+
+.project-glass-card {
+  border: 1px solid rgb(255 255 255 / 78%);
+  background-color: transparent !important;
+  box-shadow: 0 12px 32px rgb(28 35 45 / 9%), inset 0 1px 0 rgb(255 255 255 / 80%);
+}
+
+.project-card-content {
+  background-color: transparent !important;
+}
+
+.availability-pill::after { position: absolute; z-index: 1; inset: 0; padding: 1.5px; border-radius: inherit; background: conic-gradient(from var(--availability-angle), transparent 0deg 300deg, rgb(0 140 255 / 20%) 319deg, rgb(0 140 255 / 98%) 340deg, rgb(0 140 255 / 35%) 352deg, transparent 360deg); content: ""; pointer-events: none; filter: drop-shadow(0 0 3px rgb(0 140 255 / 45%)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: exclude; animation: availability-edge-sweep 6s linear infinite; }
 
 @property --availability-angle {
   syntax: "<angle>";

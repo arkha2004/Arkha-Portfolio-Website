@@ -1,8 +1,8 @@
-const navLinkBase = "flex min-h-10 items-center justify-center rounded-xl px-[18px] text-[15px] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#88a6ff] max-[500px]:min-h-[35px] max-[500px]:px-[14px] max-[500px]:text-xs";
+const navLinkBase = "flex min-h-10 items-center justify-center rounded-xl px-[18px] text-[15px] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--blue)] max-[500px]:min-h-[35px] max-[500px]:px-[14px] max-[500px]:text-xs";
 
 export default function SiteNav() {
   return (
-    <header className="mx-auto grid h-[58px] w-full max-w-6xl shrink-0 grid-cols-[1fr_auto_1fr] items-center border-b border-[#242529] pb-4 max-[500px]:h-12 max-[500px]:grid-cols-1 max-[500px]:border-b-0 max-[500px]:pb-0">
+    <header className="mx-auto grid h-[58px] w-full max-w-6xl shrink-0 grid-cols-[1fr_auto_1fr] items-center border-b border-[#242529] px-5 pb-4 sm:px-8 lg:px-12 max-[500px]:h-12 max-[500px]:grid-cols-1 max-[500px]:border-b-0 max-[500px]:pb-0">
       <a href="#home" className="w-fit justify-self-start rounded-lg border border-[#3a3b40] bg-transparent px-2.5 py-1 font-[var(--font-display)] text-[#f5f5f3] max-[500px]:hidden" aria-label="Arkhaprava Mishra, home">
         a<span className="text-blue">.</span>
       </a>
