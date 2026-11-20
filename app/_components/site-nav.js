@@ -7,8 +7,8 @@ export default function SiteNav() {
         a<span className="text-blue">.</span>
       </a>
 
-      <nav aria-label="Page navigation" className="fixed left-1/2 top-6 z-50 flex -translate-x-1/2 items-center gap-1.5 rounded-2xl border border-white/10 bg-[#252528] p-1.5 shadow-lg max-[500px]:top-[15px]">
-        <a className={`${navLinkBase} bg-[#3c3c42] text-white hover:bg-[#3c3c42]`} href="#home" aria-current="page">Home</a>
+      <nav aria-label="Page navigation" className="fixed left-1/2 top-6 z-50 flex -translate-x-1/2 items-center gap-1.5 rounded-2xl border border-white/20 bg-white/[0.08] p-1.5 shadow-[0_8px_32px_rgb(0_0_0_/_28%),inset_0_1px_0_rgb(255_255_255_/_12%)] backdrop-blur-xl max-[500px]:top-[15px]">
+        <a className={`${navLinkBase} bg-white/[0.16] text-white shadow-[inset_0_1px_0_rgb(255_255_255_/_12%)] hover:bg-white/[0.16]`} href="#home" aria-current="page">Home</a>
         <a className={`${navLinkBase} text-[#b6b6bd] hover:bg-[#3c3c42] hover:text-white`} href="#projects">Projects</a>
         <a className={`${navLinkBase} text-[#b6b6bd] hover:bg-[#3c3c42] hover:text-white`} href="#contact">Contact</a>
       </nav>

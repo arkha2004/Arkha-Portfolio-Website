@@ -12,7 +12,7 @@ function PinIcon() {
 
 export default function HomeSection() {
   return (
-    <section id="home" className="grid min-h-[calc(100svh-9rem)] items-center gap-12 py-12 max-[1023px]:grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16 lg:py-16 max-[500px]:min-w-0 max-[500px]:grid-cols-[minmax(0,1fr)] max-[500px]:gap-8 max-[500px]:py-8 max-[500px]:text-center">
+    <section id="home" className="grid min-h-[calc(100svh-9rem)] items-center gap-12 py-12 max-[1023px]:grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12 lg:py-16 max-[500px]:min-w-0 max-[500px]:grid-cols-[minmax(0,1fr)] max-[500px]:gap-8 max-[500px]:py-8 max-[500px]:text-center">
       <div className="@container max-w-[680px] max-[500px]:mx-auto max-[500px]:w-full max-[500px]:min-w-0 max-[500px]:text-center">
         <div className="availability-pill relative isolate inline-flex min-h-[33px] items-center gap-[9px] overflow-hidden rounded-full border border-[#3a4260] bg-[#111521] px-3 font-mono text-[9px] tracking-[.1em] text-[#d7e0ff] max-[500px]:min-h-[30px] max-[500px]:text-[8px]">
           <span className="relative z-[2] size-[7px] shrink-0 rounded-full bg-[var(--blue)]" aria-hidden="true" />
@@ -47,7 +47,16 @@ export default function HomeSection() {
         <HeroLinks />
       </div>
 
-      <div className="aspect-[16/10] min-h-[240px] w-full border border-[#292b31] bg-[#070708] max-[1023px]:max-w-[650px] max-[500px]:mx-auto max-[500px]:min-w-0 max-[500px]:min-h-0" role="img" aria-label="Reserved space for the introduction video" />
+      <div className="relative aspect-video w-full overflow-hidden border border-[#292b31] bg-[#070708] max-[1023px]:max-w-[650px] max-[500px]:mx-auto max-[500px]:min-w-0">
+        <iframe
+          src="https://player.vimeo.com/video/1248752165?transparent=0"
+          title="Introduction video"
+          className="absolute inset-0 block h-full w-full border-0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          allowFullScreen
+          referrerPolicy="strict-origin-when-cross-origin"
+        />
+      </div>
     </section>
   );
 }
