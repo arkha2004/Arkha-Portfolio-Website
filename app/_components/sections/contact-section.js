@@ -30,7 +30,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" aria-labelledby="contact-title" className="mx-auto w-full max-w-6xl scroll-mt-24 px-5 py-20 sm:px-8 sm:py-24">
+    <section id="contact" aria-labelledby="contact-title" className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
       <h2 id="contact-title" className="mb-7 text-center font-[var(--font-display)] text-4xl font-bold tracking-[-0.055em] text-[#f5f5f3] sm:text-left sm:text-5xl">Let’s talk</h2>
       <p className="mx-auto mb-7 max-w-lg text-center text-sm leading-7 text-[#a4a5ab] sm:hidden">I’m excited to apply my skills to your projects. Contact me to learn more about how I can contribute.</p>
       <div className="grid gap-4 lg:grid-cols-[1.05fr_1fr]">

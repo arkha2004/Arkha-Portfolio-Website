@@ -3,7 +3,7 @@ import { projects } from "../../data/projects";
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" aria-labelledby="projects-title" className="w-full scroll-mt-24 bg-[var(--light-paper)] py-16 text-[var(--light-ink)] sm:py-20">
+    <section id="projects" aria-labelledby="projects-title" className="w-full bg-[var(--light-paper)] py-16 text-[var(--light-ink)] sm:py-20">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-12">
         <div className="flex flex-wrap items-end justify-between gap-5">
           <div className="w-full text-center sm:w-auto sm:text-left">

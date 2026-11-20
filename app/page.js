@@ -6,7 +6,7 @@ import ContactSection from "./_components/sections/contact-section";
 
 export default function Page() {
   return (
-    <div className="min-h-svh pb-7 pt-5">
+    <div id="home" className="min-h-svh pb-7 pt-5">
       <SiteNav />
 
       <main>
