@@ -19,19 +19,21 @@ export default function HomeSection() {
           <span className="relative z-[2]">OPEN TO FULL-TIME ROLES</span>
         </div>
 
-        <h1 className="mt-8 text-[clamp(38px,4vw,62px)] font-[var(--font-display)] font-bold leading-[1.16] tracking-[-0.055em] text-[#85868a] max-[500px]:mt-[22px] max-[500px]:text-[clamp(24px,9vw,32px)] max-[500px]:text-center" aria-label="I’m Arkhaprava Mishra, a Full Stack Developer">
-          <span className="mb-[.06em] block text-[.58em] font-semibold leading-none tracking-[-.03em] text-[#85868a]">I’m</span>
-          <span className="flex w-fit max-w-full flex-nowrap items-center gap-[.16em] whitespace-nowrap max-[500px]:w-full max-[500px]:justify-center max-[500px]:gap-[.12em]">
-            <strong className="order-1 text-[clamp(22px,8.4cqw,57px)] leading-[1.1] tracking-[-.055em] text-[#f6f6f4] max-[500px]:text-[clamp(18px,7.2cqw,31px)]">Arkhaprava</strong>
-            <Image src="/arkhaprava-portrait.jpg" alt="Portrait of Arkhaprava Mishra" width={1024} height={1024} sizes="(max-width: 500px) 42px, 88px" className="order-3 h-[clamp(31px,9.5cqw,65px)] w-[clamp(40px,13cqw,88px)] shrink-0 rounded-full border-2 border-[#f5f5f3] object-cover object-center max-[500px]:order-2 max-[500px]:ml-[.06em] max-[500px]:h-[clamp(28px,9.5cqw,42px)] max-[500px]:w-[clamp(36px,12cqw,54px)]" preload />
-            <strong className="order-2 text-[clamp(22px,8.4cqw,57px)] leading-[1.1] tracking-[-.055em] text-[#f6f6f4] max-[500px]:order-3 max-[500px]:text-[clamp(18px,7.2cqw,31px)]">Mishra</strong>
-          </span>
-          <span className="flex w-fit max-w-full flex-nowrap items-center gap-[.16em] whitespace-nowrap max-[500px]:w-full max-[500px]:justify-center max-[500px]:gap-[.12em]">
-            <strong className="text-[clamp(22px,7.8cqw,53px)] leading-[1.1] tracking-[-.055em] text-[#f6f6f4] max-[500px]:text-[clamp(18px,7.2cqw,31px)]">Full Stack</strong>
-            <span className="relative h-[clamp(31px,9.5cqw,65px)] w-[clamp(40px,13cqw,88px)] shrink-0 self-end translate-x-1 translate-y-0 overflow-hidden rounded-[13px] border-[1.5px] border-[#eee] max-[500px]:ml-[.06em] max-[500px]:h-[clamp(28px,9.5cqw,42px)] max-[500px]:w-[clamp(36px,12cqw,54px)] max-[500px]:rounded-[9px]">
-              <Image src="/moodboard-web.jpg" alt="The word WEB on a black background" fill sizes="(max-width: 500px) 42px, 88px" className="scale-[1.7] object-cover" />
+        <h1 className="mt-8 text-[clamp(38px,4vw,62px)] font-[var(--font-display)] font-bold leading-[1.05] tracking-[-0.055em] text-[#85868a] max-[500px]:mt-[22px] max-[500px]:text-[clamp(24px,9vw,32px)] max-[500px]:text-center" aria-label="I’m Arkhaprava Mishra, a Full Stack Developer">
+          <span className="mb-0 block text-[.58em] font-semibold leading-none tracking-[-.03em] text-[#85868a]">I’m</span>
+          <span className="-mt-[6px] flex w-fit max-w-full flex-nowrap items-center gap-[.16em] whitespace-nowrap max-[500px]:mt-0 max-[500px]:w-full max-[500px]:justify-center max-[500px]:gap-[.12em]">
+            <strong className="order-1 text-[clamp(22px,8.4cqw,57px)] leading-none tracking-[-.055em] text-[#f6f6f4] max-[500px]:text-[clamp(18px,7.2cqw,31px)]">Arkhaprava</strong>
+            <span className="order-3 relative block h-[clamp(53px,17.6cqw,118px)] w-[clamp(53px,17.6cqw,118px)] shrink-0 overflow-hidden rounded-[42%] border-2 border-[#f5f5f3] bg-[#1996ff] max-[500px]:order-2 max-[500px]:ml-[.06em] max-[500px]:h-[clamp(43px,14.3cqw,63px)] max-[500px]:w-[clamp(43px,14.3cqw,63px)]">
+              <Image src="/picofme.png" alt="Portrait of Arkhaprava Mishra" fill sizes="(max-width: 500px) 63px, 118px" className="object-cover object-center" preload />
             </span>
-            <span className="text-[clamp(22px,7.8cqw,53px)] font-semibold leading-[1.1] tracking-[-.055em] text-[#85868a] max-[500px]:ml-[.18em] max-[500px]:text-[clamp(18px,7.2cqw,31px)]">Developer</span>
+            <strong className="order-2 text-[clamp(22px,8.4cqw,57px)] leading-none tracking-[-.055em] text-[#f6f6f4] max-[500px]:order-3 max-[500px]:text-[clamp(18px,7.2cqw,31px)]">Mishra</strong>
+          </span>
+          <span className="-mt-[2px] flex w-fit max-w-full flex-nowrap items-center gap-[.16em] whitespace-nowrap max-[500px]:mt-[5px] max-[500px]:w-full max-[500px]:justify-center max-[500px]:gap-[.12em]">
+            <strong className="text-[clamp(22px,7.8cqw,53px)] leading-none tracking-[-.055em] text-[#f6f6f4] max-[500px]:text-[clamp(18px,7.2cqw,31px)]">Full Stack</strong>
+            <span className="relative h-[clamp(35px,10.5cqw,73px)] w-[clamp(50px,16.15cqw,110px)] shrink-0 self-end translate-x-1 translate-y-0 overflow-hidden rounded-[16px] border-[1.5px] border-[#eee] max-[500px]:ml-[.06em] max-[500px]:h-[clamp(31px,10.5cqw,47px)] max-[500px]:w-[clamp(45px,14.9cqw,67px)] max-[500px]:rounded-[11px]">
+              <Image src="/moodboard-web.jpg" alt="The word WEB on a black background" fill sizes="(max-width: 500px) 52px, 110px" className="translate-y-1 scale-[1.7] object-cover" />
+            </span>
+            <span className="text-[clamp(22px,7.8cqw,53px)] font-semibold leading-none tracking-[-.055em] text-[#85868a] max-[500px]:ml-[.18em] max-[500px]:text-[clamp(18px,7.2cqw,31px)]">Developer</span>
           </span>
         </h1>
 
