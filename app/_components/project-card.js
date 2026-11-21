@@ -39,7 +39,7 @@ export default function ProjectCard({ project }) {
           <div className="flex items-center gap-2">
             <ProjectLink href={project.website}>Website</ProjectLink>
             <ProjectLink href={project.github}>GitHub</ProjectLink>
-            {project.linkedin && <ProjectLink href={project.linkedin}><LinkedInMark /><span className="text-[13px]">post</span></ProjectLink>}
+            {project.linkedin && <ProjectLink href={project.linkedin}><LinkedInMark /><span className="text-[13px] max-[392px]:hidden">post</span></ProjectLink>}
           </div>
         </div>
       </div>

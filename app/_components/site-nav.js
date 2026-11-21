@@ -34,7 +34,7 @@ export default function SiteNav() {
 
   return (
     <header className="mx-auto grid h-[58px] w-full max-w-6xl shrink-0 grid-cols-[1fr_auto_1fr] items-center px-5 pb-4 sm:px-8 lg:px-12 max-[500px]:h-12 max-[500px]:grid-cols-1 max-[500px]:pb-0">
-      <a href="#home" className="mt-4 w-fit justify-self-start rounded-lg border border-[#3a3b40] bg-transparent px-3 py-1.5 text-lg font-[var(--font-display)] text-[#f5f5f3] max-[500px]:mt-0" aria-label="Arkhaprava Mishra, home">
+      <a href="#home" className="mt-4 w-fit justify-self-start rounded-lg border border-[#3a3b40] bg-transparent px-3 py-1.5 text-lg font-[var(--font-display)] text-[#f5f5f3] max-[500px]:mt-0 max-[500px]:-translate-y-2" aria-label="Arkhaprava Mishra, home">
         a<span className="text-blue">.</span>
       </a>
 
