@@ -3,12 +3,77 @@
 import { useState } from "react";
 
 const email = "arkha.the.coder@gmail.com";
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const card = "rounded-[24px] border border-white/10 bg-white/[0.025] p-6 sm:p-8";
 const formCard = "rounded-[24px] border border-white/10 bg-white/[0.025] p-4 sm:p-8";
 const field = "mt-2 w-full rounded-xl border border-white/10 bg-white/[0.035] px-4 py-3 text-sm text-[#f5f5f3] outline-none transition focus:border-[var(--blue)] placeholder:text-[#777980]";
 
 export default function ContactSection() {
   const [copied, setCopied] = useState(false);
+  const [formState, setFormState] = useState({ status: "idle", message: "" });
+  const [emailError, setEmailError] = useState("");
+
+  async function submitContactForm(event) {
+    event.preventDefault();
+    setFormState({ status: "sending", message: "Sending your message…" });
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const submittedEmail = String(formData.get("email") || "").trim();
+    const submittedMessage = String(formData.get("message") || "").trim();
+
+    if (!emailPattern.test(submittedEmail)) {
+      setEmailError("Please enter a valid email address.");
+      setFormState({ status: "idle", message: "" });
+      form.elements.namedItem("email")?.focus();
+      return;
+    }
+    setEmailError("");
+
+    if (!submittedMessage) {
+      setFormState({ status: "error", message: "Please enter your message." });
+      form.elements.namedItem("message")?.focus();
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: submittedEmail,
+          message: submittedMessage,
+          website: formData.get("website"),
+        }),
+      });
+      const result = await response.json().catch(() => ({}));
+
+      if (response.ok) {
+        form.reset();
+        setFormState({ status: "success", message: "Message sent. A confirmation email is on its way." });
+        return;
+      }
+
+      if (result.notificationSent) {
+        form.reset();
+        setFormState({
+          status: "partial",
+          message: "Your message reached Arkha, but we couldn't send the confirmation email. Please don't submit it again.",
+        });
+        return;
+      }
+
+      setFormState({
+        status: "error",
+        message: "Sorry, your message couldn't be sent. Please try again or email me directly at arkha.the.coder@gmail.com.",
+      });
+    } catch {
+      setFormState({
+        status: "error",
+        message: "Sorry, your message couldn't be sent. Please try again or email me directly at arkha.the.coder@gmail.com.",
+      });
+    }
+  }
 
   async function copyEmail() {
     try {
@@ -35,13 +100,34 @@ export default function ContactSection() {
       <h2 id="contact-title" className="mb-7 text-center font-[var(--font-display)] text-4xl font-bold tracking-[-0.055em] text-[#f5f5f3] sm:text-left sm:text-5xl">Let’s talk</h2>
       <p className="mx-auto mb-7 max-w-lg text-center text-sm leading-7 text-[#a4a5ab] sm:hidden">I’m excited to apply my skills to your projects. Contact me to learn more about how I can contribute.</p>
       <div className="grid gap-4 lg:grid-cols-[1.05fr_1fr]">
-        <form className={`${formCard} flex flex-col`} action={`mailto:${email}`} method="post" encType="text/plain">
+        <form className={`${formCard} flex flex-col`} onSubmit={submitContactForm} noValidate>
           <p className="hidden max-w-lg text-sm leading-7 text-[#a4a5ab] sm:block">I’m excited to apply my skills to your projects. Contact me to learn more about how I can contribute.</p>
+          <div className="absolute left-[-10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+            <label htmlFor="contact-website">Leave this field empty</label>
+            <input id="contact-website" name="website" type="text" autoComplete="off" tabIndex={-1} />
+          </div>
           <label className="mt-7 text-sm" htmlFor="contact-email">Your email</label>
-          <input className={field} id="contact-email" name="email" type="email" placeholder="you@example.com" required />
+          <input
+            className={field}
+            id="contact-email"
+            name="email"
+            type="email"
+            maxLength={254}
+            placeholder="you@example.com"
+            required
+            aria-invalid={Boolean(emailError)}
+            aria-describedby={emailError ? "contact-email-error" : undefined}
+            onChange={() => { if (emailError) setEmailError(""); }}
+          />
+          {emailError && <p id="contact-email-error" className="mt-2 text-sm text-red-300" role="alert">{emailError}</p>}
           <label className="mt-5 text-sm" htmlFor="contact-message">Your message</label>
           <textarea className={`${field} min-h-36 resize-y`} id="contact-message" name="message" placeholder="Tell me a little about it…" required />
-          <button className="mt-6 self-center rounded-full border border-white/20 px-6 py-3 text-sm transition hover:border-[var(--blue)] hover:bg-[var(--blue)] hover:text-[#07111a] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--blue)]" type="submit">Send message <span aria-hidden="true">↗</span></button>
+          <button className="mt-6 self-center rounded-full border border-white/20 px-6 py-3 text-sm transition hover:border-[var(--blue)] hover:bg-[var(--blue)] hover:text-[#07111a] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--blue)] disabled:cursor-wait disabled:opacity-60" type="submit" disabled={formState.status === "sending"}>
+            {formState.status === "sending" ? "Sending…" : "Send message"} <span aria-hidden="true">↗</span>
+          </button>
+          <p className={`mt-4 text-center text-sm ${formState.status === "error" ? "text-red-300" : formState.status === "success" ? "text-emerald-300" : "text-[#a4a5ab]"}`} role={formState.status === "error" ? "alert" : "status"} aria-live="polite">
+            {formState.message}
+          </p>
         </form>
 
         <div className="grid gap-4 sm:grid-cols-2">
